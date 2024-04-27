@@ -10,7 +10,7 @@ To set up and run RhythmReaper, follow these steps:
    - Clone the repository:
 
     ```bash
-     git clone https://github.com/yourusername/RhythmReaper.git
+     git clone https://github.com/TusharPachouri/RhythmReaper.git
     ```
 
    - Navigate to the project directory:
