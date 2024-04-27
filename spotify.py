@@ -60,19 +60,25 @@ def get_artist_albums(token, artist_id):
     # print(json_result["items"])
     return json_result["items"]
 
+def get_album_songs(token, album_id):
+    url = f"https://api.spotify.com/v1/albums/{album_id}/tracks"
+    headers = get_auth_headers(token)
+    result = get(url, headers=headers)
+    json_result = json.loads(result.content)
+    # print(json_result["items"])
+    return json_result["items"]
+
+def get_artist_songs_by_album(token, singer_name):
+    result = search_for_artist(token, singer_name)
+    artist_id = result["id"]
+    albums = get_artist_albums(token, artist_id)
+    for index, album in enumerate(albums):
+        print(index+1,": ",album["name"])
+        songs = get_album_songs(token, album['id'])
+        for inx,song in enumerate(songs):
+            print("\t",inx+1,": ",song["name"])
 
 # token = get_token()
-
-# result = search_for_artist(token, "One Direction")
-
-# artist_id = result["id"]
-
-# songs = get_songs_of_artist(token, artist_id)
-
-# for idx, song in enumerate(songs):
-#     print(f"{idx+1}. {song['name']}")
+# get_artist_songs_by_album(token, "Arijit Singh")
 
 
-# albums = get_artist_albums(token, artist_id)
-# for idx, album in enumerate(albums):
-#     print(f"{idx+1}. {album['name']}")

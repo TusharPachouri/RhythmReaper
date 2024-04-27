@@ -50,7 +50,7 @@ if __name__ == "__main__":
             # print(f"{idx+1}. {song['name']}")
             search = Search(song['name'])
             url = search.results[0].watch_url
-            print("Url: ",idx," : ", url)
+            print("Downloading song %s" % song['name'])
             # print(url)
             downloadMp3(url, path)
             # print("Download complete.")
