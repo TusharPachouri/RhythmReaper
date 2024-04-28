@@ -32,23 +32,20 @@ def open_file_dialog():
         print("Selected folder: %s" % folder)
     return folder
 
-
-
-
-if __name__ == "__main__":
-    #tkinter code
-    root = tk.Tk()
-    root.title("YouTube Video Downloader")
-    root.withdraw()
-    url = input("Enter the URL of the video: ")
+# if __name__ == "__main__":
+#     #tkinter code
+#     root = tk.Tk()
+#     root.title("YouTube Video Downloader")
+#     root.withdraw()
+#     url = input("Enter the URL of the video: ")
     
-    directory = open_file_dialog() # Open file dialog to select directory
+#     directory = open_file_dialog() # Open file dialog to select directory
 
-    if directory:
-        print("Downloading video to %s" % directory)
-        downloadMp3(url, directory)
-        print("Download complete.")
-    else:
-        print("No directory selected. Exiting...")
+#     if directory:
+#         print("Downloading video to %s" % directory)
+#         downloadMp3(url, directory)
+#         print("Download complete.")
+#     else:
+#         print("No directory selected. Exiting...")
         
-    subprocess.run(["pkill", "-f", "python"])
+#     # subprocess.run(["pkill", "-f", "python"])

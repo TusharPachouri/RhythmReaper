@@ -57,4 +57,4 @@ if __name__ == "__main__":
     else:
         print("No directory selected. Exiting...")
         
-    subprocess.run(["pkill", "-f", "python"])
+    # subprocess.run(["pkill", "-f", "python"])
